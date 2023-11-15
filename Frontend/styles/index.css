@@ -1,0 +1,529 @@
+html {
+    scroll-behavior: smooth;
+  }
+body{
+    font-family: 'Lato', sans-serif !important;
+    background-color: black !important;
+}
+/* navbar */
+.navbar-div{
+    height:auto;
+}
+.navbar {
+
+    background-color: #000;
+    min-height: 100px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+
+  }
+  
+  .nav-image {
+    margin-left: 5%;
+    height: 90px;
+    width: 220px;
+  }
+  
+  .navbar-toggler {
+    border: 1px solid #E6AC00;
+  }
+  .navbar-collapse {
+    text-align: right;
+  }
+
+  .navbar-nav {
+    align-items: flex-end;
+    margin-right: 20px; 
+  }
+  
+  .nav-link {
+    font-size: 1.35rem;
+    color: #E6AC00 !important;
+    font-family: 'Lato', sans-serif !important;
+  }
+  
+  .nav-link:hover {
+    color: #e8c868 !important;
+  }
+  
+  .nav-login {
+    display: flex;
+    align-items: center; 
+  }
+  
+  .login-divider {
+    width: 2px;
+    height: 30px;
+    background-color: #E6AC00;
+    margin: 0 50px; 
+  }
+  
+  .login-icon {
+    color: #E6AC00;
+    font-size: 1.5rem;
+    margin-right: 150px;
+  }
+  
+  .login-icon:hover {
+    color: #e8c868;
+  }
+
+/* caraousel */
+
+.carousel {
+    height: 750px; 
+  }
+  
+  .carousel-inner {
+    display: flex;
+    align-items: center;
+  }
+  
+  .carousel-item img {
+   width:auto;
+   height:750px; 
+  }
+  .carousel-caption{
+    width:auto;
+    margin-bottom: 150px;
+    align-items: center;
+    text-align: center;
+    font-family: 'Notable', sans-serif;
+    font-size: 3rem;
+  }
+  .button { 
+    background:none;
+      border: none;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      
+    }
+    
+    .button1 {
+    border-radius:20px;
+      color:#ffe699; 
+      border: 2px solid #ffe699;
+    }
+    
+    .button1:hover {
+      background-color: #e8c868;
+      color: white;
+      border-color: #e8c868;
+    }
+    .explore{
+        color: #E6AC00;
+    }
+  
+/* icon */
+
+.icon-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0 10%;
+    margin:100px 0 40px 0;
+  }
+  
+  .icon-box {
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .fa-solid{
+    margin-bottom: 20px;
+  }
+  .icon-text{
+    font-size: 1.2rem;
+    color: #fff !important;
+    font-family: 'Lato', sans-serif !important;
+  }
+
+
+/* painting section */
+.section-divider {
+  border-top: 2px solid #514f4f; 
+  width:90%;
+  margin-left: 5%;
+}
+
+.content-container {
+  background-color: #000; 
+  padding: 80px 100px; 
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.text {
+    width: 50%;
+    padding-right: 20px;
+  }
+
+.painting-image {
+  height:500px;
+  width: 500px;
+}
+
+.h2-painting {
+  font-size: 1.6rem; 
+  margin-bottom: 10px; 
+  color: white;
+  font-family: 'Lato', sans-serif !important;
+}
+
+.p-painting {
+  font-size: 1.2rem; 
+  margin-bottom: 20px; 
+  font-family: 'Overpass Mono', monospace;
+  color: #E6AC00;
+  margin-bottom: 10px;
+}
+
+.a-painting {
+  text-decoration: none; 
+  color: #E6AC00; 
+  font-weight: bold; 
+  font-family: 'Lato', sans-serif !important;
+  transition: font-size 0.3s ease; 
+}
+.a-painting:hover {
+    color: #e8c868; 
+    font-size: 18px; /* Initial font size */
+  }
+
+  /* footer */
+  .footer {
+    background-color: #1a1a1a; 
+    display: flex;  
+    padding: 20px;
+    color: #FFD700;
+    align-items:flex-start;
+}
+
+.footer-section {
+    align-items: left;
+    text-align: left;
+    margin: 2%;
+}
+
+.section-content {
+    padding: 10px;
+}
+
+.h2-footer {
+    font-weight: bold;
+    font-size: 18px;
+    padding-bottom: 10px;
+    font-family: 'Lato', sans-serif !important;
+}
+
+.p-footer {
+    color: #fff; 
+    font-size: 14px;
+    font-family: 'Lato', sans-serif !important;
+}
+
+.li-footer {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-family: 'Lato', sans-serif !important;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+
+/* responsive*/
+
+@media (max-width: 991px) {
+    .nav-image {
+        margin-left: 20px;
+        height: 90px;
+        width: 170px;
+      }
+      .login-divider {
+        display:none;
+      }
+      .login-icon {
+        margin-right: 0;
+      }
+      .content {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .text {
+        width: 100%; 
+        text-align: center; 
+        padding: 20px 0;
+      }
+    
+      .painting-image {
+        max-width: 100%;
+        height: auto; 
+        transition: max-width 0.3s ease; 
+      }
+      .navbar-nav {
+        flex-direction: row;
+        margin-right: 0; 
+      }
+      .footer {
+        flex-direction: column; 
+        align-items: center;
+      }
+    
+      .footer-section {
+        margin: 2% 0; 
+        text-align: center;
+      }
+    
+      .h2-footer {
+        font-size: 17px; 
+      }
+    
+      .p-footer {
+        font-size: 14px;
+      }
+    
+      .li-footer {
+        font-size: 14px; 
+      }
+    
+      .social-icons a {
+        margin-right: 5px; 
+      }
+      .smooth-transition {
+        transition: transform 0.3s ease;
+      }
+      .modal-content {
+        margin-top: 17%;
+        margin-left: 23%;
+      }
+  }
+
+  @media (max-width: 500px) {
+    .nav-image {
+        margin-left: 0;
+        height: 80px;
+        width: 150px;
+      }
+      .login-divider {
+        display:none;
+      }
+      .login-icon {
+        margin-right: 0;
+      }
+      .smooth-transition {
+        transition: transform 0.3s ease;
+      }
+      .modal-overlay{
+        position: relative;
+      }
+      .modal-content {
+        margin-top: 17%;
+        margin-left:0;
+      }
+}
+
+/* signup modal */
+
+.modal-overlay {
+    display: none;
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    backdrop-filter: blur(5px);
+    z-index: 1000; 
+    justify-content: center;
+    align-items: center; 
+  }
+  
+  
+  .modal-content {
+    margin-top: 20%;
+    margin-left: 36%;
+    background: #1a1a1a; 
+    color: #FFD700; 
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 400px; 
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    color: #FFD700; 
+    font-size: 24px;
+  }
+  
+  h2#modal-title {
+    font-size: 24px; 
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+ 
+  #signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #signup-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #FFD700; 
+    border-radius: 5px;
+    background: transparent; 
+    color: #FFD700; 
+  }
+  
+  #signup-form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: #e6ac00; 
+    color: #1a1a1a; 
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  #signup-form button:hover {
+    background: #e8c868; 
+    color: #1a1a1a; }
+    #signup-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #signin-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #signin-form input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #FFD700; 
+      border-radius: 5px;
+      background: transparent; 
+      color: #FFD700; 
+    }
+    
+    #signin-form button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      background: #e6ac00; 
+      color: #1a1a1a; 
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+    
+    #signin-form button:hover {
+      background: #e8c868; 
+      color: #1a1a1a; }
+  
+  p {
+    font-size: 14px; 
+  }
+  p a {
+    text-decoration: none;
+    color: #e8ac50; 
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  p a:hover {
+    color: #e6ac00; 
+  }
+  /* Style your profile page and modal here */
+/* You can style the user profile and artwork carousel as needed */
+
+/* Style the modal backdrop */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Style the modal content */
+.modal-content {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style the modal title */
+.modal-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Style the modal body */
+.modal-body {
+  padding: 20px;
+}
+
+/* Style the form inputs and labels */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+}
+
+/* Style the upload button */
+.btn-primary {
+  background-color: #0074d9;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Style the close button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+.close:hover {
+  color: #0074d9;
+}
+
+  

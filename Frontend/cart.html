@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Palette Picks</title>
+  <link rel="shortcut icon" href="images/logo.ico" />
+  <link rel="stylesheet" href="styles/cart.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Notable&family=Overpass+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/de39a4860c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="navbar-div fade-element">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+          <a class="navbar-brand" href="#">
+            <img class="nav-image" src="images/logo.jpg" alt="Logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" id="section1" href="aboutus.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Cart</a>
+              </li>
+              <li class="nav-item">
+                  <hr class="login-divider">
+              </li>
+              <li class="nav-item"></li>
+                  <a class="login-icon" href="#">
+                    <i class="fas fa-user"></i>
+                  </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <!-- cart -->
+      <div class="cart-page">
+        <div class="cart">
+            <h1>Your Cart</h1>
+            <div class="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+        </div>
+        <div class="proceed-to-buy">
+            <div class="total-items">
+                <p>Total Items in Cart: <span id="cart-item-count">0</span></p>
+                <p>Total Price: ₹<span id="cart-total-price">0</span></p>
+            </div>
+            <button class="proceed-button">Proceed to Buy</button>
+        </div>
+    </div>
+
+
+    <!-- footer -->
+<div class="footer fade-element" id="contact">
+    <div class="footer-section">
+        <div class="section-content">
+            <h2 class="h2-footer">Welcome to our art gallery Website</h2>
+            <p class="p-footer">Explore a diverse collection of breathtaking artworks from talented artists around India</p>
+        </div>
+    </div>
+    <div class="footer-section">
+        <div class="section-content">
+            <h2 class="h2-footer">Contact</h2>
+                <p class="li-footer"><i class="fa-solid fa-location-dot fa-lg" style="color: #e8aa00;"></i>&nbsp;&nbsp;&nbsp; 123 Art Gallery Street, Chennai, India</p>
+                <p class="li-footer"><i class="fa-solid fa-phone fa-lg" style="color: #e8aa00;"></i>&nbsp;&nbsp;&nbsp; +1 123-456-7890</p>
+                <p class="li-footer"><i class="fa-solid fa-envelope" style="color: #e8aa00;"></i>&nbsp;&nbsp;&nbsp; palettepicks@info.com</p>
+        </div>
+    </div>
+    <div class="footer-section">
+        <div class="section-content">
+            <h2 class="h2-footer">Follow Us</h2>
+            <p class="p-footer">Stay Updated with the latest news and latest artworks by following us on social media</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook fa-lg" style="color: #e8aa00;"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter fa-lg" style="color: #e8aa00;"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram fa-lg" style="color: #e8aa00;"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin fa-lg" style="color: #e8aa00;"></i></a>
+            </div>
+        </div>
+    </div>
+  </div>
+  <script src="script/cart.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

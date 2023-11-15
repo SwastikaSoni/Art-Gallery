@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo.ico" />
+    <link rel="stylesheet" href="styles/paintings.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Notable&family=Overpass+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/de39a4860c.js" crossorigin="anonymous"></script>
+    <title>Art Gallery Store</title>
+</head>
+<body style="background-image: url('images/mysore_bg.jpg'); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
+    <div class="navbar-div fade-element">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+          <a class="navbar-brand" href="#">
+            <img class="nav-image" src="images/logo-remove.png" alt="Logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" id="section1" href="aboutus.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Cart</a>
+              </li>
+              <li class="nav-item">
+                  <hr class="login-divider">
+              </li>
+              <li class="nav-item"></li>
+                  <a class="login-icon" href="#">
+                    <i class="fas fa-user"></i>
+                  </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div style="background-color: rgba(35, 35, 35, 0.8); padding: 10px;">
+        <div class="home" style="text-align: right;">
+          <a style="color: #E6AC00; text-decoration: none; font-weight: bold;" href="index.html">Home</a> / <a style="color: #fff; text-decoration: none;" href="#"> > Mysore</a>
+        </div>
+      </div>
+    <header>
+        <div class="filter">
+            <select class="filter-drop" id="priceFilter">
+                <option value="highToLow">Price High to Low</option>
+                <option value="lowToHigh">Price Low to High</option>
+            </select>
+            <select class="filter-drop" id="ratingFilter">
+                <option value="highToLow">Rating High to Low</option>
+                <option value="lowToHigh">Rating Low to High</option>
+            </select>
+        </div>
+    </header>
+    <main class="gallery"></main>
+    <div class="footer fade-element" id="contact">
+        <div class="footer-section">
+            <div class="section-content">
+                <h2 class="h2-footer">Welcome to our art gallery Website</h2>
+                <p class="p-footer">Explore a diverse collection of breathtaking artworks from talented artists around India</p>
+            </div>
+        </div>
+        <div class="footer-section">
+            <div class="section-content">
+                <h2 class="h2-footer">Contact</h2>
+                    <p class="li-footer"><i class="fa-solid fa-location-dot fa-lg" style="color: #e8aa00;"></i>&nbsp;&nbsp;&nbsp; 123 Art Gallery Street, Chennai, India</p>
+                    <p class="li-footer"><i class="fa-solid fa-phone fa-lg" style="color: #e8aa00;"></i>&nbsp;&nbsp;&nbsp; +1 123-456-7890</p>
+                    <p class="li-footer"><i class="fa-solid fa-envelope" style="color: #e8aa00;"></i>&nbsp;&nbsp;&nbsp; palettepicks@info.com</p>
+            </div>
+        </div>
+        <div class="footer-section">
+            <div class="section-content">
+                <h2 class="h2-footer">Follow Us</h2>
+                <p class="p-footer">Stay Updated with the latest news and latest artworks by following us on social media</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook fa-lg" style="color: #e8aa00;"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter fa-lg" style="color: #e8aa00;"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram fa-lg" style="color: #e8aa00;"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin fa-lg" style="color: #e8aa00;"></i></a>
+                </div>
+            </div>
+        </div>
+      </div>
+      <script src="script/mysore.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

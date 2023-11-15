@@ -1,0 +1,181 @@
+/* Body Styles */
+body {
+  background-color: #1a1a1a; /* Dark grey */
+  font-family: 'Overpass Mono', monospace;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* Heading Styles */
+h1, h2, h3 {
+  color: goldenrod;
+}
+h1,
+h2 {
+  animation: fadeInUp 1s ease forwards;
+} 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button Styles */
+button {
+  background-color: goldenrod;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+button {
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+button:hover::before {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+}
+
+button span {
+  position: relative;
+  z-index: 1;
+}
+button:hover {
+  background-color: #ffd700; /* Lighter gold */
+  color: black;
+  transition: background-color 0.3s ease-in-out; /* Transition on hover */
+}
+
+/* Modal Styles */
+/* Styles for modals */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.modal-content {
+  background-color: #111;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  animation: scaleIn 0.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.modal-content form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.modal-content form input,
+.modal-content form select {
+  width: calc(100% - 20px);
+  padding: 8px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+}
+
+.modal-content form button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* Add transition effects */
+button,
+.modal-content {
+  transition: all 0.3s ease;
+}
+
+/* Improve hover effects */
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+  }
+}
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+.close:hover,
+.close:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Additional CSS for Improved Styling */
+/* ... [Previous CSS] ... */
+
+#profileDetails button {
+  padding: 3px 6px;
+  font-size: 9px;
+}
+
+#profileDetails button {
+  background-color: #ffa500; /* Orange */
+  color: white;
+  border: 2px solid #ffa500; /* Orange */
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+#profileDetails button:hover {
+  background-color: transparent;
+  color: #ffa500; /* Orange */
+}
+#artworkSection {
+  text-align: center;
+}
+
+#artworkCarousel p {
+  font-style: italic;
+  color: #888; /* Light grey */
+  margin-top: 20px;
+}
+
