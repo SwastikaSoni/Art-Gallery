@@ -3,41 +3,30 @@ document.addEventListener("DOMContentLoaded", function () {
     const priceFilter = document.getElementById("priceFilter");
     const ratingFilter = document.getElementById("ratingFilter");
 
-    // Simulated database data
-    const artworks = [
-        { id: 1, title: "Artwork 1", artist: "Artist A", price: 200, rating: 4.5, imageUrl: "images/madhubani_cards.jpg" },
-        { id: 2, title: "Artwork 2", artist: "Artist B", price: 150, rating: 4.0, imageUrl: "images/madhubani_cards.jpg" },
-        { id: 3, title: "Artwork 3", artist: "Artist C", price: 300, rating: 4.8, imageUrl: "images/madhubani_cards.jpg" },
-        { id: 1, title: "Artwork 1", artist: "Artist A", price: 200, rating: 4.5, imageUrl: "images/madhubani_cards.jpg" },
-        { id: 2, title: "Artwork 2", artist: "Artist B", price: 150, rating: 4.0, imageUrl: "images/madhubani_cards.jpg" },
-        { id: 3, title: "Artwork 3", artist: "Artist C", price: 300, rating: 3.9, imageUrl: "images/madhubani_cards.jpg" },
-        { id: 2, title: "Artwork 2", artist: "Artist B", price: 150, rating: 4.0, imageUrl: "images/madhubani_cards.jpg" },
-        { id: 3, title: "Artwork 3", artist: "Artist C", price: 300, rating: 4.8, imageUrl: "images/madhubani_cards.jpg" },
-        { id: 1, title: "Artwork 1", artist: "Artist A", price: 200, rating: 4.5, imageUrl: "images/madhubani_cards.jpg" },
-        { id: 2, title: "Artwork 2", artist: "Artist B", price: 150, rating: 4.0, imageUrl: "images/madhubani_cards.jpg" },
-        { id: 3, title: "Artwork 3", artist: "Artist C", price: 300, rating: 4.8, imageUrl: "images/madhubani_cards.jpg" },
-        { id: 1, title: "Artwork 1", artist: "Artist A", price: 200, rating: 4.5, imageUrl: "images/madhubani_cards.jpg" },
-        { id: 2, title: "Artwork 2", artist: "Artist B", price: 150, rating: 4.0, imageUrl: "images/madhubani_cards.jpg" },
-        { id: 3, title: "Artwork 3", artist: "Artist C", price: 300, rating: 3.9, imageUrl: "images/madhubani_cards.jpg" },
-        { id: 2, title: "Artwork 2", artist: "Artist B", price: 150, rating: 4.0, imageUrl: "images/madhubani_cards.jpg" },
-        { id: 3, title: "Artwork 3", artist: "Artist C", price: 300, rating: 4.8, imageUrl: "images/madhubani_cards.jpg" },
-        // Add more artwork objects here
-    ];
+    // Fetch Madhubani paintings from your server
+    fetch('http://localhost:3000/madhubanis') 
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            // Call the function to display artworks with the retrieved data
+            displayArtworks(data);
+        })
+        .catch(error => console.error('Error fetching madhubani data:', error));
 
     // Sort and display the artwork cards based on the selected filters
-    priceFilter.addEventListener("change", updateGallery);
-    ratingFilter.addEventListener("change", updateGallery);
+    // priceFilter.addEventListener("change", updateGallery);
+    // ratingFilter.addEventListener("change", updateGallery);
 
-    function updateGallery() {
-        const priceSort = priceFilter.value === "highToLow" ? -1 : 1;
-        const ratingSort = ratingFilter.value === "highToLow" ? -1 : 1;
+    // function updateGallery(artworks) {
+    //     const priceSort = priceFilter.value === "highToLow" ? -1 : 1;
+    //     const ratingSort = ratingFilter.value === "highToLow" ? -1 : 1;
 
-        const sortedArtworks = artworks.sort((a, b) => {
-            return a.price * priceSort - b.price * priceSort || a.rating * ratingSort - b.rating * ratingSort;
-        });
+    //     const sortedArtworks = artworks.sort((a, b) => {
+    //         return a.price * priceSort - b.price * priceSort || a.rating * ratingSort - b.rating * ratingSort;
+    //     });
 
-        displayArtworks(sortedArtworks);
-    }
+    //     displayArtworks(sortedArtworks);
+    // }
     
     
     function displayArtworks(artworks) {
@@ -48,8 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
             card.classList.add("card");
 
             const image = document.createElement("img");
-            image.src = "placeholder.jpg"; // Placeholder image
-            image.dataset.src = artwork.imageUrl; // Store the actual image URL in a data attribute
+            image.src = "Frontend\images\placeholder.jpg"; // Placeholder image
+            if (artwork.imageData) {
+                image.src = `data:image/jpeg;base64,${artwork.imageData}`;
+            }
+    
+            image.dataset.src = image.src;
             card.appendChild(image);
 
             // Load images lazily when they come into the viewport
@@ -65,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
             observer.observe(image);
 
             const title = document.createElement("div");
-            title.innerText = artwork.title;
+            title.innerText = artwork.paintingName;
             card.appendChild(title);
 
             const artist = document.createElement("div");
@@ -98,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Add an event listener to update the displayed rating when the user selects a new rating
             ratingDropdown.addEventListener("change", function () {
                 const selectedRating = parseFloat(ratingDropdown.value);
-                const previousTotalArtworks = 100; // Get the previous total number of artworks
+                const previousTotalArtworks = artwork.totalVotes; // Get the previous total number of artworks
             
                 // Calculate the new rating
                 const newRating = ((artwork.rating * previousTotalArtworks) + selectedRating) / (previousTotalArtworks + 1);
@@ -133,8 +126,5 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
     
-    updateGallery();
+    displayArtworks();
 });
-
-
-

@@ -6,6 +6,11 @@ const signupModal = document.getElementById('signup-modal');
 const modalTitle = document.getElementById('modal-title');
 const signupButton = document.getElementById('signup-button');
 const signinButton = document.getElementById('signin-button');
+const madhubani = document.getElementById('madhubani');
+const mysore = document.getElementById('mysore');
+const thangka = document.getElementById('thangka');
+const phad = document.getElementById('phad');
+const kalam = document.getElementById('kalam');
 let isAuthenticated = false;
 // Function to open the modal
 function openModal() {
@@ -18,18 +23,53 @@ function openModal() {
   }
 }
 const handleJoinUsClick = (event) => {
+  event.preventDefault();
   openModal(event);
 };
+function handleCartLinkClick(event) {
+  event.preventDefault();
+  openModal(event);
+}
+
+// Named function for handling "Profile" link click
+function handleProfileLinkClick(event) {
+  event.preventDefault();
+  openModal(event);
+}
+function handleMadhubaniClick(event) {
+  event.preventDefault();
+  openModal(event);
+}
+function handleMysoreClick(event) {
+  event.preventDefault();
+  openModal(event);
+}
+function handlePhadClick(event) {
+  event.preventDefault();
+  openModal(event);
+}
+function handleKalamClick(event) {
+  event.preventDefault();
+  openModal(event);
+}
+function handleThangkaClick(event) {
+  event.preventDefault();
+  openModal(event);
+}
 // Get the "Join Us" button and add a click event listener
 const joinUsButton = document.querySelector('.button1');
 joinUsButton.addEventListener('click', handleJoinUsClick);
 
-const cartLink = document.querySelector('.nav-item a[href="#"]');
-cartLink.addEventListener('click', handleJoinUsClick);
+const cartLink = document.querySelector('.cart');
+  cartLink.addEventListener('click',handleCartLinkClick);
 
-const loginIcon = document.querySelector('.login-icon');
-loginIcon.addEventListener('click', handleJoinUsClick);
-
+const profileLink = document.querySelector('.login-icon');
+  profileLink.addEventListener('click', handleProfileLinkClick);
+  madhubani.addEventListener('click',handleMadhubaniClick);
+  mysore.addEventListener('click',handleMysoreClick)
+  phad.addEventListener('click',handlePhadClick)
+  kalam.addEventListener('click',handleKalamClick)
+  thangka.addEventListener('click',handleThangkaClick)
 
 // Function to close the modal
 function closeModal() {
@@ -54,11 +94,17 @@ function closeModal() {
   document.getElementById('signup-modal').style.display = 'none';
 }
 
-// // function removeEventListeners() {
-// //   joinUsButton.removeEventListener('click', handleJoinUsClick);
-// //   cartLink.removeEventListener('click', handleJoinUsClick);
-// //   loginIcon.removeEventListener('click', handleJoinUsClick);
-// // }
+function removeEventListeners() {
+  joinUsButton.removeEventListener('click', handleJoinUsClick);
+  cartLink.removeEventListener('click', handleCartLinkClick);
+  profileLink.removeEventListener('click', handleProfileLinkClick);
+  madhubani.removeEventListener('click',handleMadhubaniClick)
+  mysore.removeEventListenerListener('click',handleMysoreClick)
+  phad.removeEventListenerListener('click',handlePhadClick)
+  kalam.removeEventListener('click',handleKalamClick)
+  thangka.removeEventListener('click',handleThangkaClick)
+}
+
 
 
 function handleScroll() {
@@ -130,6 +176,7 @@ async function signup() {
   const email = document.getElementById('emailInput').value;
   const password = document.getElementById('passwordInput').value;
   const address = document.getElementById('addressInput').value;
+
   try {
     const response = await fetch('http://localhost:3000/signup', {
       method: 'POST',
@@ -139,35 +186,59 @@ async function signup() {
       body: JSON.stringify({ name, dob, email, password, address }),
     });
 
-    const data = await response.json();
-    console.log(data.message);
+    const responseData = await response.json();
+    
+    if (responseData.message === "User registered successfully") {
+      console.log('Signup successful!');
+      window.location.href = 'home.html';
+    } else {
+      console.log('Signup failed. Server response:', responseData);
+      alert('Signup failed. Please check your details and try again.');
+    }
   } catch (error) {
-    console.log(error)
+    console.error('Error during signup:', error);
+    alert('An error occurred during signup. Please try again.');
   } finally {
     closeModal();
+    removeEventListeners();
   }
 }
+
 
 async function signin() {
   const email = document.getElementById('signinEmailInput').value;
   const password = document.getElementById('signinPasswordInput').value;
-  try{
-  const response = await fetch('http://localhost:3000/signin', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ email, password }),
-  });
 
-  const data = await response.json();
-  console.log(data);
+  try {
+    const response = await fetch('http://localhost:3000/signin', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const responseData = await response.json();
+    console.log('Signin response:', responseData);
+
+    if (responseData.message === "User signed in successfully") {
+      console.log('Signin successful!');
+      window.location.href = 'home.html';
+    } else {
+      console.log('Signin failed. Server response:', responseData);
+      alert('Signin failed. Check email and password.');
+    }
+  } catch (error) {
+    console.error('Error during signin:', error);
+    alert('An error occurred during signin. Please try again.');
+  } finally {
+    closeModal();
+    removeEventListeners();
+  }
 }
-catch(error){
-  console.log(error)
-}finally{
-  closeModal();
-}
-}
+
+
+
+
 signupButton.addEventListener('click', signup);
 signinButton.addEventListener('click', signin);
