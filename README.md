@@ -1,2 +1,2 @@
 # Art-Gallery
-![sample](Frontend/images/1.jpg)
+![sample](https://github.com/SwastikaSoni/Art-Gallery/blob/main/Frontend/images/1.jpg)
